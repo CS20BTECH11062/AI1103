@@ -21,7 +21,7 @@ for i in range(11):
 people = [0, 1]
 # choosing our sample of 10 people as the size of result of each outcome
 num_people = 10
-# assigning 'left' and 'right' probabilities
+# assigning 'right' and 'left' probabilities
 probabilities = [0.9, 0.1]
 
 print("Let us run the simulation 1000000 times and check the number of cases in which at most 6 are right handed")
