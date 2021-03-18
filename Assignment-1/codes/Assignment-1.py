@@ -81,7 +81,7 @@ cases = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 
 # np.arrange returns len(cases) = 11 evenly spaced points to plot the graph
 x = np.arange(len(cases))
-# matplotlib.pyplot.bar function draws a bar graph of
+# matplotlib.pyplot.bar function draws a bar graph 
 matplotlib.pyplot.bar(x + 0.00, prob_theo, color='black', width=0.25, label='Calculated')
 # we are then setting the positions of the two plots,the lists prob_theo,prob_sim whose values are plotted in the
 # respective graphs and their respective colors and their widths.
