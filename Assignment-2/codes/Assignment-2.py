@@ -37,7 +37,7 @@ for i in range(sim):
             num_head += 1
     # the above code calculates the number of heads in the
     # generated random sample and increments num_head if the condition is satisfied
-    # checking number of heads for plotting
+    # checking number of heads for plotting the graph
     if num_head == 0:
         prob_sim[0] += 1
     elif num_head == 1:
