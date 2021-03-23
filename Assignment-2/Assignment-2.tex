@@ -150,23 +150,37 @@ So,
 \begin{align}
     \pr{M=k} = \comb{10}{k} \times \brak{\frac{1}{2}}^{10-k} \times \brak{\frac{1}{2}}^{k}\label{0.0.2}
 \end{align}
-$\Pr$('head' appears twice in 10 tosses) = $\pr{M = 2}$\\
-\begin{align}
-    \pr{M = 2} = & \hspace{0.3cm}\comb{10}{2} \times \brak{\frac{1}{2}}^{10-2} \times \brak{\frac{1}{2}}^{2} \\\notag
-    \bigskip
-    =            & \hspace{0.3cm}\comb{10}{2} \times \brak{\frac{1}{2}}^{10}                                 \\\notag
-\end{align}
-$\implies$ Probability that 'head' appears 2 times in 10 tosses is 0.0439453125\\\\
-Now, these 2 heads can occur at any position in 10 tosses.\\
+\begin{table}[h]
+    \begin{center}
+        \resizebox{7cm}{!}
+        {
+            \begin{tabular}{|c|c|}
+                \hline
+                n           & 10                                                                            \\
+                \hline
+                Condition   & $P(X = 2)$                                                                    \\
+                \hline
+                Calculation & $\comb{10}{2} \times \brak{\frac{1}{2}}^{10-2} \times \brak{\frac{1}{2}}^{2}$ \\
+                \hline
+                Value       & 0.043945                                                                      \\
+                \hline
+            \end{tabular}
+        }
+    \end{center}
+\end{table}
+$\Pr$('head' appears twice in 10 tosses) = $\pr{M = 2}$
+Now, these 2 heads can occur at any position in 10 tosses.
 \begin{itemize}
-    \item Number of ways of choosing 2 positions from 10 tosses = $\comb{10}{2}$\\
-    \item Probability that chosen 2 'heads' are from FIRST and SECOND tosses = \(\displaystyle \frac{1}{\comb{10}{2}}\)\\
+    \item Number of ways of choosing 2 positions from 10 tosses = $\comb{10}{2}$
+          \bigskip
+    \item Probability that chosen 2 'heads' are from FIRST and SECOND tosses = \(\displaystyle \frac{1}{\comb{10}{2}}\)
+          \bigskip
 \end{itemize}
 Probability that ONLY the first 2 tosses yield heads =  $\pr{M = 2} \times$ Probability that chosen 2 'heads' are from FIRST and SECOND tosses.\\\\
 \begin{align}
     \implies \comb{10}{2} \times \brak{\frac{1}{2}}^{10} \times \frac{1}{\comb{10}{2}} = \brak{\frac{1}{2}}^{10}\notag
 \end{align}
-Probability that 'head' appears ONLY in the first two tosses is $\brak{\frac{1}{2}}^{10}$.
+Probability that 'head' appears ONLY in the first two tosses is $\displaystyle\brak{\frac{1}{2}}^{10}$\\
 \begin{center}
     Correct Option : C
 \end{center}
