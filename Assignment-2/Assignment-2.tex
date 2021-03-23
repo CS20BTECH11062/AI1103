@@ -65,7 +65,7 @@ columns=fullflexible
 \begin{document}
 
 \newcommand{\BEQA}{\begin{eqnarray}}
-\newcommand{\EEQA}{\end{eqnarray}}
+        \newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
 \bibliographystyle{IEEEtran}
 \raggedbottom
@@ -86,7 +86,7 @@ columns=fullflexible
 \newtheorem{rem}{Remark}
 \newcommand{\sgn}{\mathop{\mathrm{sgn}}}
 \providecommand{\abs}[1]{\vert#1\vert}
-\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\res}[1]{\Res\displaylimits_{#1}}
 \providecommand{\norm}[1]{\lVert#1\rVert}
 %\providecommand{\norm}[1]{\lVert#1\rVert}
 \providecommand{\mtx}[1]{\mathbf{#1}}
@@ -94,7 +94,7 @@ columns=fullflexible
 \providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
 %\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
 \providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
-	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
 \newcommand{\solution}{\noindent \textbf{Solution: }}
 \newcommand{\cosec}{\,\text{cosec}\,}
 \newcommand{\comb}[2]{{}^{#1}\mathrm{C}_{#2}}
@@ -109,10 +109,10 @@ columns=fullflexible
 \let\vec\mathbf
 \renewcommand{\thefigure}{\theproblem}
 \def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
-     \def\rightbox#1{\makebox[0in][r]{#1}}
-     \def\centbox#1{\makebox[0in]{#1}}
-     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
-     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\def\rightbox#1{\makebox[0in][r]{#1}}
+\def\centbox#1{\makebox[0in]{#1}}
+\def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+\def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
 \title{AI1103 Assignment-2}
 \author{SRIVATSAN T - CS20BTECH11062}
@@ -121,12 +121,12 @@ columns=fullflexible
 \bigskip
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
-Download all python codes from 
+Download all python codes from
 \begin{lstlisting}
 https://github.com/CS20BTECH11062/AI1103/tree/main/Assignment-2/codes
 \end{lstlisting}
 %
-and latex-tikz codes from 
+and latex-tikz codes from
 %
 \begin{lstlisting}
 https://github.com/CS20BTECH11062/AI1103/tree/main/Assignment-2/Assignment-2.tex
@@ -135,9 +135,9 @@ https://github.com/CS20BTECH11062/AI1103/tree/main/Assignment-2/Assignment-2.tex
 A fair coin is tossed 10 times. What is the \\probability that ONLY the first 2 tosses will yield heads?
 \section*{SOLUTION}
 Let M be a random variable representing number of 'heads' in 10 tosses.\\
-So M has a binomial distribution : 
+So M has a binomial distribution :
 \begin{align}
-\pr{M=k} = \comb{n}{k} \times (h)^{n-k} \times (t)^{k}\label{0.0.1}
+    \pr{M=k} = \comb{n}{k} \times (h)^{n-k} \times (t)^{k}\label{0.0.1}
 \end{align}
 Where
 \begin{itemize}
@@ -148,13 +148,13 @@ Where
 \bigskip
 So,
 \begin{align}
-\pr{M=k} = \comb{10}{k} \times \brak{\frac{1}{2}}^{10-k} \times \brak{\frac{1}{2}}^{k}\label{0.0.2}
+    \pr{M=k} = \comb{10}{k} \times \brak{\frac{1}{2}}^{10-k} \times \brak{\frac{1}{2}}^{k}\label{0.0.2}
 \end{align}
 $\Pr$('head' appears twice in 10 tosses) = $\pr{M = 2}$\\
 \begin{align}
-\pr{M = 2} = & \hspace{0.3cm}\comb{10}{2} \times \brak{\frac{1}{2}}^{10-2} \times \brak{\frac{1}{2}}^{2}\\\notag
-\bigskip
-= & \hspace{0.3cm}\comb{10}{2} \times \brak{\frac{1}{2}}^{10}\\\notag
+    \pr{M = 2} = & \hspace{0.3cm}\comb{10}{2} \times \brak{\frac{1}{2}}^{10-2} \times \brak{\frac{1}{2}}^{2} \\\notag
+    \bigskip
+    =            & \hspace{0.3cm}\comb{10}{2} \times \brak{\frac{1}{2}}^{10}                                 \\\notag
 \end{align}
 $\implies$ Probability that 'head' appears 2 times in 10 tosses is 0.0439453125\\\\
 Now, these 2 heads can occur at any position in 10 tosses.\\
@@ -164,7 +164,7 @@ Now, these 2 heads can occur at any position in 10 tosses.\\
 \end{itemize}
 Probability that ONLY the first 2 tosses yield heads =  $\pr{M = 2} \times$ Probability that chosen 2 'heads' are from FIRST and SECOND tosses.\\\\
 \begin{align}
-\implies \comb{10}{2} \times \brak{\frac{1}{2}}^{10} \times \frac{1}{\comb{10}{2}} = \brak{\frac{1}{2}}^{10}\notag
+    \implies \comb{10}{2} \times \brak{\frac{1}{2}}^{10} \times \frac{1}{\comb{10}{2}} = \brak{\frac{1}{2}}^{10}\notag
 \end{align}
 Probability that 'head' appears ONLY in the first two tosses is $\brak{\frac{1}{2}}^{10}$.
 \begin{center}
