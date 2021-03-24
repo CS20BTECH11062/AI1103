@@ -41,7 +41,7 @@
     \usepackage{lscape}     
 \usepackage{multicol}
 \usepackage{chngcntr}
-
+\usepackage{textcomp}
 \DeclareMathOperator*{\Res}{Res}
 
 \renewcommand\thesection{\arabic{section}}
@@ -113,7 +113,7 @@ columns=fullflexible
 \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
 \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
-\title{AI1103 Assignment-1}
+\title{AI1103 Assignment-3}
 \author{SRIVATSAN T - CS20BTECH11062}
 \maketitle
 \newpage
@@ -136,38 +136,42 @@ obey the exponential distributions with means 6 and 2 months respectively. Plant
 four times as many bulbs as plant A does. Bulbs from these two plants are indistinguishable.
 They are mixed and sold together. Given that a bulb purchased at random is working after 12 months, What is the probability that it was manufactured in plant A?
 \section*{SOLUTION}
-Given that 90 \% of the population is 'right' handed and since being 'right' handed and being 'left' handed are mutually exclusive,
+This problem involves Baye's theorem and \newline Exponential distribution
 \bigskip
 \begin{itemize}
-    \item Probability of 'right' handed = $\pr{R}$ = \(\frac{9}{10}\)
-    \item Probability of 'left' handed = $\pr{L}$ = \( \frac{1}{10} \)
+    \item Probability that bulb is from Plant A =\newline $\pr{A}$ = \(\frac{1}{5}\)
+    \item Probability that bulb is from Plant B =\newline$\pr{B}$ = \( \frac{4}{5} \)
 \end{itemize}
 \bigskip
-One can use binomial distribution to find out the probability that more that 6 people are 'right' handed.\\
-Let M be a variable representing number of people who are 'right' handed in a given sample.\\
-So M has a binomial distribution :
-\begin{align}
-    \pr{M=k} = {{n}\choose{k}} \times (l)^{n-k} \times (r)^{k}\label{0.0.1}
-\end{align}
+One can use exponential distribution to find out the probability that the bulbs work after 12 months\\
+Let X be a variable representing the lifetime of a bulb in months.\\
+So X has a Cumulative distribution Function:
+\begin{equation}
+    F(x,\lambda) =
+    \begin{cases}
+        1 - {e}^{-\displaystyle\lambda x} & if \hspace{0.3cm}x \geq 0\\
+        0       & if \hspace{0.3cm}x < 0
+    \end{cases}
+\end{equation}
 Where
 \begin{itemize}
-    \item n = Total number of people = 10
-    \item l = Probability that a person is 'left' handed = \( \frac{1}{10} \)
-    \item r = Probability that a person is 'right' handed = \( \frac{9}{10} \)
+    \item $\frac{1}{\displaystyle\lambda}$ = Mean of distribution
+    \newline
+    \item x = Time to failure (in months)
 \end{itemize}
 \bigskip
 So,
 \begin{align}
-    \pr{M=k} = {{n}\choose{k}} \times \brak{\frac{1}{10}}^{n-k} \times \brak{\frac{9}{10}}^{k}\label{0.0.2}
+    \pr{M\leq k} = F(M,\lambda)\label{0.0.2}
 \end{align}
 \begin{center}
-    $\Pr$(at most 6 are right handed) = $\pr{M = 0}$\\+ $\pr{M = 1}$ + $\pr{M = 2}$ + $\pr{M = 3}$ \\+ $\pr{M = 4}$ + $\pr{M = 5}$ + $\pr{M = 6}$\\
+    Pr(Works after 12 months $\mid$ Plant A) = \newline 1 - Pr(Fails within 12 months $\mid$ Plant A)\\
 \end{center}
 \begin{align}
     \implies \pr{0\leq M \leq 6} = 1 - \pr{7 \leq M \leq10}\label{0.0.3}
 \end{align}
 \begin{center}
-    (Since $\sum_{k=0}^{10}$ $\pr{M=k}$ = 1)\\
+    Pr(Works after 12 months $\mid$ Plant A) = \newline 1 - Pr(Fails within 12 months $\mid$ Plant A)
 \end{center}
 \begin{align}
     \implies 1 - \pr{7 \leq M \leq 10} = 1 - \sum_{k=7}^{10} \pr{M=k}\label{0.0.4}
@@ -176,7 +180,6 @@ From \eqref{0.0.2} we get,
 \begin{align}
     \implies 1 - \sum_{k=7}^{10} {{10}\choose{k}} \times \brak{\frac{1}{10}}^{10-k} \times \brak{\frac{9}{10}}^{k}\label{0.0.5}
 \end{align}
-
 \begin{align}
     \begin{split}
         \implies 1 - {{10}\choose{7}} \times \brak{\frac{1}{10}}^{3} \times \brak{\frac{9}{10}}^{7} - {{10}\choose{8}} \times \brak{\frac{1}{10}}^{2} \times \brak{\frac{9}{10}}^{8}
@@ -188,7 +191,6 @@ From \eqref{0.0.2} we get,
 \begin{align}
     \implies \pr{0 \leq M \leq 6} = \frac{7996999}{625000000} = 0.012795198\notag
 \end{align}
-
 \bigskip
 Thus the probability that at most 6 people are 'right' handed is 0.012795198
 \pagebreak
