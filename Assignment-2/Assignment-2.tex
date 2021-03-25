@@ -134,7 +134,7 @@ https://github.com/CS20BTECH11062/AI1103/tree/main/Assignment-2/Assignment-2.tex
 \section*{QUESTION (GATE Prob 27)}
 A fair coin is tossed 10 times. What is the \newline probability that ONLY the first 2 tosses will yield heads?
 \section*{SOLUTION}
-Let $M \in \{0,1,2,3,4,5,6,7,8,9,10\}$ be a random variable representing number of 'heads' in 10 tosses.
+Let $M \sim B\brak{n,h}$ be a random variable representing number of 'heads' in 10 tosses.
 \newline
 So M has a binomial distribution :
 \begin{align}
@@ -153,17 +153,17 @@ So,
 \end{align}
 \begin{table}[h]
     \begin{center}
-        \resizebox{5cm}{!}
+        \resizebox{6cm}{!}
         {
             \begin{tabular}{|c|c|}
                 \hline
-                n           & 10                                                                            \\
+                n            & 10                                            \\
                 \hline
-                Pr (2 heads)  & $\pr{X = 2}$                                                                    \\
+                $\pr{M = 2}$ & $\comb{10}{2} \times \brak{\frac{1}{2}}^{10-2} \times \brak{\frac{1}{2}}^{2}$                                 \\
                 \hline
-                Calculation & $\comb{10}{2} \times \brak{\frac{1}{2}}^{10}$ \\
+                Calculation  & $\comb{10}{2} \times \brak{\frac{1}{2}}^{10}$ \\
                 \hline
-                Value       & 0.043945                                                                      \\
+                Value        & 0.043945                                      \\
                 \hline
             \end{tabular}
         }
@@ -172,14 +172,16 @@ So,
 \begin{itemize}
     \item Number of ways of choosing 2 positions from 10 tosses = $\comb{10}{2}$
           \bigskip
+    \item Number of favourable outcome = 1 (Choosing FIRST and SECOND tosses as heads)
+          \bigskip
     \item Probability that chosen 2 'heads' are from FIRST and SECOND tosses = \(\displaystyle \frac{1}{\comb{10}{2}}\)
           \bigskip
 \end{itemize}
-Probability that ONLY the first 2 tosses yield heads  
+Probability that ONLY the first 2 tosses yield heads
 \begin{align}
-= & \pr{M = 2} \times \displaystyle \frac{1}{\comb{10}{2}}\\
-= & \comb{10}{2} \times \brak{\frac{1}{2}}^{10} \times \frac{1}{\comb{10}{2}}\\ 
-= & \brak{\frac{1}{2}}^{10}
+    = & \pr{M = 2} \times \displaystyle \frac{1}{\comb{10}{2}}                    \\
+    = & \comb{10}{2} \times \brak{\frac{1}{2}}^{10} \times \frac{1}{\comb{10}{2}} \\
+    = & \brak{\frac{1}{2}}^{10}
 \end{align}
 Probability that 'head' appears ONLY in the first two tosses is $\displaystyle\brak{\frac{1}{2}}^{10}$
 \smallskip
