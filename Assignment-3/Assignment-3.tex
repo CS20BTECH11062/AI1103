@@ -136,7 +136,7 @@ obey the exponential distributions with means 6 and 2 months respectively. Plant
 four times as many bulbs as plant A does. Bulbs from these two plants are indistinguishable.
 They are mixed and sold together. Given that a bulb purchased at random is working after 12 months, What is the probability that it was manufactured in plant A?
 \section*{SOLUTION}
-This problem involves Baye's theorem and \newline Exponential distribution
+This problem involves Bayes theorem and \newline Exponential distribution
 \bigskip
 \begin{itemize}
     \item Probability that bulb is from Plant A =\newline $\pr{A}$ = \(\frac{1}{5}\)
@@ -162,37 +162,34 @@ Where
 \bigskip
 So,
 \begin{align}
-    \pr{M\leq k} = F(M,\lambda)\label{0.0.2}
+    \lambda_A = \frac{1}{6} , \lambda_B = \frac{1}{2}
+\end{align}
+\begin{align}
+    \pr{X\leq k} = F(X,\lambda)
 \end{align}
 \begin{center}
-    Pr(Works after 12 months $\mid$ Plant A) = \newline 1 - Pr(Fails within 12 months $\mid$ Plant A)\\
+    Pr(Works after 12 months $\mid$ A) = \newline 1 - Pr(Fails within 12 months $\mid$ A)\\
 \end{center}
 \begin{align}
-    \implies \pr{0\leq M \leq 6} = 1 - \pr{7 \leq M \leq10}\label{0.0.3}
+    =& 1 - F(12,\lambda_A)\\
+    =& {e}^{\displaystyle - \lambda_A \times 12}\\
+    =& {e}^{-2}
 \end{align}
 \begin{center}
-    Pr(Works after 12 months $\mid$ Plant A) = \newline 1 - Pr(Fails within 12 months $\mid$ Plant A)
+    Pr(Works after 12 months $\mid$ B) = \newline 1 - Pr(Fails within 12 months $\mid$ B)
 \end{center}
 \begin{align}
-    \implies 1 - \pr{7 \leq M \leq 10} = 1 - \sum_{k=7}^{10} \pr{M=k}\label{0.0.4}
+    =& 1 - F(12,\lambda_B)\\
+    =& {e}^{\displaystyle -\lambda_B \times 12}\\
+    =& {e}^{-6}
 \end{align}
-From \eqref{0.0.2} we get,
+Lets denote the bulb works after 12 months with the variable W. From Bayes theorem,\\
 \begin{align}
-    \implies 1 - \sum_{k=7}^{10} {{10}\choose{k}} \times \brak{\frac{1}{10}}^{10-k} \times \brak{\frac{9}{10}}^{k}\label{0.0.5}
+    Pr(A \mid W) = & \displaystyle{\frac{Pr(A) \times Pr(W \mid A)}{Pr(A) \times Pr(W \mid A) + Pr(B) \times Pr(W \mid B)}}\\
+    = & \displaystyle{\frac{ \displaystyle{\frac{1}{5}} \times {e}^{-2}}{\displaystyle{\frac{1}{5}} \times {e}^{-2} + \displaystyle{\frac{4}{5}} \times {e}^{-6}}}\\[0.5cm]
+    = & 0.932
 \end{align}
-\begin{align}
-    \begin{split}
-        \implies 1 - {{10}\choose{7}} \times \brak{\frac{1}{10}}^{3} \times \brak{\frac{9}{10}}^{7} - {{10}\choose{8}} \times \brak{\frac{1}{10}}^{2} \times \brak{\frac{9}{10}}^{8}
-        \bigskip\\
-        -{{10}\choose{9}} \times \brak{\frac{1}{10}}^{1} \times \brak{\frac{9}{10}}^{9} - {{10}\choose{10}} \times \brak{\frac{1}{10}}^{0}\times
-        \brak{\frac{9}{10}}^{10}\label{0.0.6}
-    \end{split}
-\end{align}
-\begin{align}
-    \implies \pr{0 \leq M \leq 6} = \frac{7996999}{625000000} = 0.012795198\notag
-\end{align}
-\bigskip
-Thus the probability that at most 6 people are 'right' handed is 0.012795198
+So the probability that the Bulb is manufactured in Plant A given that it works after a year is 0.932.
 \pagebreak
 %\includegraphics{Figure-1.png}
 \end{document}
