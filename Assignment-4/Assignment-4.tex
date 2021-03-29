@@ -100,6 +100,7 @@ columns=fullflexible
 %\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
 \newcommand{\solution}{\noindent \textbf{Solution: }}
 \newcommand{\cosec}{\,\text{cosec}\,}
+\newcommand{\comb}[2]{{}^{#1}\mathrm{C}_{#2}}
 \providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
 \newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
 \newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
@@ -125,78 +126,63 @@ columns=fullflexible
 \renewcommand{\thetable}{\theenumi}
 Download all python codes from
 \begin{lstlisting}
-https://github.com/CS20BTECH11062/AI1103/tree/main/Assignment-3/codes
+    https://github.com/Srivatsan-T/AI1103/tree/main/Assignment-4/codes
 \end{lstlisting}
 %
 and latex-tikz codes from
 %
 \begin{lstlisting}
-https://github.com/CS20BTECH11062/AI1103/tree/main/Assignment-3/Assignment-3.tex
+    https://github.com/Srivatsan-T/AI1103/blob/main/Assignment-4/Assignment-4.tex
 \end{lstlisting}
-\section*{QUESTION (GATE-MA-2014-36)}
-The time to failure, in months, of lights bulbs \\manufactured at two plants A and B
-obey the exponential distributions with means 6 and 2 months respectively. Plant B produces
-four times as many bulbs as plant A does. Bulbs from these two plants are indistinguishable.
-They are mixed and sold together. Given that a bulb purchased at random is working after 12 months, What is the probability that it was manufactured in plant A?
+\section*{QUESTION (GATE-ME-2012-45)}
+A box contains 4 red balls and 6 black balls. Three balls are selected randomly from the box one after another, 
+without replacement. What is the probability that the selected set contains one red ball and two black balls?
+\begin{center}
+    A. $\displaystyle{\frac{1}{20}}$ \hspace{0.5cm}B. $\displaystyle{\frac{1}{12}}$ \hspace{0.5cm}C. $\displaystyle{\frac{3}{10}}$ \hspace{0.5cm}D. $\displaystyle{\frac{1}{2}}$
+\end{center}
 \section*{SOLUTION}
-This problem involves Bayes theorem and \newline Exponential distribution
+This problem involves Hyper-Geometric distribution
 \bigskip
 \begin{itemize}
-    \item Probability that bulb is from Plant A =\newline $\pr{A}$ = \(\frac{1}{5}\)
-    \item Probability that bulb is from Plant B =\newline$\pr{B}$ = \( \frac{4}{5} \)
+    \item Number of Red balls = 4
+    \item Number of Black balls = 6
 \end{itemize}
 \bigskip
-One can use exponential distribution to find out the probability that the bulbs work after 12 months\\
-Let X be a variable representing the lifetime of a bulb in months.\\
-So X has a Cumulative distribution Function:
+One can use Hyper-Geometric distribution to find out the probability that the selected set contains 1 red and 2 black balls.\\
+Let M be a variable representing the number of black balls in a selection of 3 balls.\\
+M has a probability distribution Function:
 \begin{equation}
-    F_X(x,\lambda) =
-    \begin{cases}
-        1 - {e}^{-\displaystyle\lambda x} & if \hspace{0.3cm}x \geq 0 \\
-        0                                 & if \hspace{0.3cm}x < 0
-    \end{cases}
+    \pr{M = k} = \frac{\comb{K}{k} \times \comb{N-K}{n-k}}{\comb{N}{n}}
 \end{equation}
+Here Success refers to selecting a black ball,
 \begin{table}[H]
     \begin{center}
-        \resizebox{\columnwidth}{!}
+        \resizebox{!}{!}
         {
-            \begin{tabular}{|c|c|}
+            \begin{tabular}{|c|c|c|}
                 \hline
-                $\frac{1}{\displaystyle\lambda}$ &  Mean of distribution\\
+                K & Total successes in population & 6\\
                 \hline
-                x & Time to failure (in months)\\
+                N & Population size & 6 + 4 = 10\\
                 \hline
-                $\lambda_A$ & $\frac{1}{6}$\\
+                k & Total observed successes & 2\\
                 \hline
-                $\lambda_B$ & $\frac{1}{2}$\\
-                \hline
-                $\pr{X\leq k}$ & $F_X(X,\lambda)$\\
+                n & Number of draws & 3\\
                 \hline
             \end{tabular}
         }
     \end{center}
 \end{table}
-Let us denote that the bulbs works after 12 months with the variable W.
+Probability that the selected set contains 2 black balls and 1 red ball = $\pr{M = 2}$\\
 \begin{align}
-\text{$\pr{W \mid A}$} = & 1 -\notag \text{Pr(Fails within 12 months $\mid$ A)}\\
-    = & 1 - F_X(12,\lambda_A)                       \\
-    = & {e}^{\displaystyle - \lambda_A \times 12} 
+    \pr{M = 2} = \hspace{0.2cm}& \frac{\comb{K}{2} \times \comb{N-K}{n-2}}{\displaystyle{\comb{N}{n}}}\\[0.3cm]
+               = \hspace{0.2cm}& \frac{\comb{6}{2} \times \comb{10-6}{3-2}}{\displaystyle{\comb{10}{3}}}\\[0.3cm]
+               = \hspace{0.2cm}& \frac{\comb{6}{2} \times \comb{4}{1}}{\displaystyle{\comb{10}{3}}}\\[0.3cm]
+               = \hspace{0.2cm}& \frac{15 \times 4}{120}\\[0.3cm]
+               = \hspace{0.2cm}& \frac{1}{2}
 \end{align}
-\begin{align}
-    \text{$\pr{W \mid B}$} = & 1 -\notag \text{Pr(Fails within 12 months $\mid$ B)}\\
-        = & 1 - F_X(12,\lambda_B)                       \\
-        = & {e}^{\displaystyle - \lambda_B \times 12} 
-\end{align}
-From Bayes theorem,\\
-\begin{align}
-    \pr{A \mid W} = & \displaystyle{\frac{Pr(A) \times Pr(W \mid A)}{Pr(A) \times Pr(W \mid A) + Pr(B) \times Pr(W \mid B)}}\\
-    = & \displaystyle{\frac{Pr(A) \times {e}^{\displaystyle - \lambda_A \times 12}}{Pr(A) \times {e}^{\displaystyle - \lambda_A \times 12} + Pr(B) \times {e}^{\displaystyle - \lambda_B \times 12} }}
-\end{align}
-Substituting the known values, we get
-\begin{align}
-    \pr{A \mid W} = &\displaystyle{\frac{\displaystyle{\frac{1}{5}} \times {e}^{\displaystyle - 2}}{\displaystyle{\frac{1}{5}} \times {e}^{\displaystyle - 2} + \displaystyle{\frac{4}{5}} \times {e}^{\displaystyle - 6} }}\\[0.4cm]
-    = & 0.93173845935
-\end{align}
-So the probability that the Bulb is manufactured in Plant A given that it works after a year is 0.93173845935.
-\pagebreak
+So the probability that the selected set of 3 balls contain 2 black balls and 1 red ball is $\displaystyle{\frac{1}{2}}$.
+\begin{center}
+    Correct Option : D
+\end{center}
 \end{document}
