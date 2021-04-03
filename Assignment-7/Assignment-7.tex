@@ -1,0 +1,208 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+\usepackage{textcomp}
+\usepackage{float}
+\restylefloat{table}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+        \newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\vert#1\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E[#1]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\newcommand{\comb}[2]{{}^{#1}\mathrm{C}_{#2}}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+\def\rightbox#1{\makebox[0in][r]{#1}}
+\def\centbox#1{\makebox[0in]{#1}}
+\def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+\def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{AI1103 Assignment-7}
+\author{SRIVATSAN T - CS20BTECH11062}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+Download all python codes from
+\begin{lstlisting}
+https://github.com/CS20BTECH11062/AI1103/tree/main/Assignment-6/codes
+\end{lstlisting}
+%
+and latex-tikz codes from
+%
+\begin{lstlisting}
+https://github.com/CS20BTECH11062/AI1103/tree/main/Assignment-6/Assignment-6.tex
+\end{lstlisting}
+\section*{QUESTION (CSIR UGC NET June 2016 Q.104)}
+The joint probability density function of (X,Y) is
+\begin{equation}
+    f(x,y) =
+    \begin{cases}
+        6(1-x) & if \hspace{0.3cm}0<y<x ,0<x<1\label{0.0.1} \\
+        0      & \text{otherwise}
+    \end{cases}
+\end{equation}
+Which among the following are correct?
+\begin{enumerate}\itemsep0.3cm
+    \item X and Y are not independent
+    \item
+          $ f_Y(y) =
+              \begin{cases}
+                  3\brak{y-1}^{2} & if \hspace{0.3cm}0<y<1 \\
+                  0               & \text{otherwise}
+              \end{cases}$
+    \item X and Y are independent
+    \item $ f_Y(y) =
+              \begin{cases}
+                  3\brak{\displaystyle{y-\frac{1}{2}{y}^2}} & if \hspace{0.3cm}0<y<1 \\
+                  0                                         & \text{otherwise}
+              \end{cases}$
+\end{enumerate}
+\section*{SOLUTION}
+Given joint probability density function of X and Y, marginal probability density functions are as follows:
+\begin{align}
+    f_X(x) = \int_{-\infty}^{\infty} f(x,y) dy \\[0.4cm]
+    f_Y(y) = \int_{-\infty}^{\infty} f(x,y) dx
+\end{align}
+Calculating $f_X(x)$
+\begin{align}
+    f_X(x) = & \int_{-\infty}^{\infty} f(x,y) dy \\
+    =        & \int_{0}^{x} 6(1-x) dy            
+\end{align}
+\begin{align}
+    f_X(x) =
+    \begin{cases}
+        6x(1-x) & 0<x<1     \label{0.0.6}\\
+        0       & otherwise
+    \end{cases}
+\end{align}
+Calculating $f_Y(y)$
+\begin{align}
+    f_Y(y) = & \int_{-\infty}^{\infty} f(x,y) dx \\
+    =        & \int_{y}^{1} 6(1-x) dx\\
+    =        & 6x -3{x}^2 \big|_{y}^{1}\\
+    =        & 3 - 6y + 3y^{2}\\
+    =        & 3{(y-1)}^{2}      
+\end{align}
+\begin{align}
+    f_Y(y) =
+    \begin{cases}
+        3{(y-1)}^{2}  & 0<y<1     \label{0.0.12}\\
+        0       & otherwise
+    \end{cases}
+\end{align}
+To check whether X and Y are independent, we calculate $f_X(x) \times f_Y(y)$. From \eqref{0.0.6} and \eqref{0.0.12}
+\begin{align}
+    f_X(x) \times f_Y(y) = &
+    \begin{cases}
+        18x(1-x){(y-1)}^{2}  \\ \hspace{1.2cm}0<x<1,0<y<1\\
+        0 \hspace{1cm} \text{otherwise}
+    \end{cases}\\
+    \neq & f(x,y)
+\end{align}
+Since f(x,y) and $f_X(x)\times f_Y(y)$ are different, random variables X and Y are not independent.
+\begin{center}
+    Options 1 and 2 are correct
+\end{center}
+\end{document}
