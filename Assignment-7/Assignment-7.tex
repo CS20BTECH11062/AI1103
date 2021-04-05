@@ -145,28 +145,5 @@ having a uniform distribution on (0,1). Then,$$\lim_{n \to +\infty} \pr{U_1+U_2\
 \end{enumerate}
 \section*{SOLUTION}
 We want $U_1+U_2\dots,U_n\leq\displaystyle{\frac{3}{4}}n$. 
-Arithmetic mean of $U_1,U_2\dots,U_n \leq \displaystyle{\frac{3}{4}}$. 
-Thus each of $U_1,U_2 \dots U_n$ to be lesser than or equal to $\displaystyle{\frac{3}{4}}$.
-\begin{align}
-    \begin{split}
-    \pr{U_1+U_2\dots,U_n\leq \displaystyle{\frac{3}{4}}n}=\pr{U_1\leq \displaystyle{\frac{3}{4}}} \times \\\pr{U_2\leq \displaystyle{\frac{3}{4}}} \times \pr{U_3\leq \displaystyle{\frac{3}{4}}} \dots \pr{U_n\leq \displaystyle{\frac{3}{4}}}.
-    \end{split}
-\end{align}
-Since $U_1,U_2,U_3\dots,U_n$ are continuous random variables on (0,1), whose probability distribution function is $\displaystyle{\frac{1}{1-0}} = 1$
-\begin{align}
-    \pr{U_i\leq \displaystyle{\frac{3}{4}}} = \int_{0}^{\frac{3}{4}} 1 dx = \displaystyle{\frac{3}{4}}\hspace{0.3cm}\text{for i $\in$ {(1,2,3\dots,n)}}\\
-\end{align} 
-\begin{align}
-    \pr{U_1\leq \displaystyle{\frac{3}{4}}} \times \pr{U_2\leq \displaystyle{\frac{3}{4}}} \dots \pr{U_n\leq \displaystyle{\frac{3}{4}}}
-\end{align}
-\begin{align}
-    = &\displaystyle{\frac{3}{4} \times \frac{3}{4} \times \frac{3}{4} \times\dots \frac{3}{4} \hspace{0.3cm}\text{(n times)}}\\[0.3cm]
-    = & \displaystyle{\brak{\frac{3}{4}}^{n}}
-\end{align}
-\begin{align}
-        \lim_{n\to\infty} \pr{U_1+U_2\dots,U_n\leq \frac{3}{4}n} = \lim_{n\to\infty} \displaystyle{\brak{\frac{3}{4}}^{n}}= 0
-\end{align}
-\begin{center}
-    Correct Option - 2
-\end{center}
+
 \end{document}
