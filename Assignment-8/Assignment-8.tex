@@ -1,0 +1,211 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+\usepackage{textcomp}
+\usepackage{float}
+\restylefloat{table}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+        \newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\vert#1\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E[#1]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\newcommand{\comb}[2]{{}^{#1}\mathrm{C}_{#2}}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+\def\rightbox#1{\makebox[0in][r]{#1}}
+\def\centbox#1{\makebox[0in]{#1}}
+\def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+\def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{AI1103 Assignment-7}
+\author{SRIVATSAN T - CS20BTECH11062}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+Download all python codes from
+\begin{lstlisting}
+https://github.com/CS20BTECH11062/AI1103/tree/main/Assignment-8/codes
+\end{lstlisting}
+%
+and latex-tikz codes from
+%
+\begin{lstlisting}
+https://github.com/CS20BTECH11062/AI1103/tree/main/Assignment-8/Assignment-8.tex
+\end{lstlisting}
+\section*{QUESTION (UGC MATH (mathA) June 2017 Q.52)}
+Let $U_1,U_2\dots,U_n$ be independent and identically distributed random variables each
+having a uniform distribution on (0,1). Then,$$\lim_{n \to +\infty} \pr{U_1+U_2\dots,U_n\leq \frac{3}{4}n}$$
+\begin{enumerate}
+    \item does not exist
+    \item exists and equals 0
+    \item exists and equals 1
+    \item exists and equals $\frac{3}{4}$
+\end{enumerate}
+\section*{SOLUTION}
+We use Weak law for large numbers to solve this problem. 
+Let the collection of identically distributed random variables $U_1,U_2\dots,U_n$
+have a finite mean $\mu$ and finite variance $\sigma^2$.
+\begin{align}
+    \mu = E(U_i) \hspace{0.3cm}\text{for i $\in$ (1,2,3\dots,n)}\label{0.0.1}
+\end{align}
+Since the distribution is uniform on (0,1), $\mu$ = 0.5. Let $M_n$ be the sample mean
+\begin{align}
+     M_n = \frac{U_1+U_2+U_3\dots+U_n}{n}\label{0.0.2}
+\end{align}
+Expected value of $M_n$ (using \eqref{0.0.2} and \eqref{0.0.1})is
+\begin{align}
+    E(M_n) = &\frac{E(U_1+U_2+U_3+\dots+U_n)}{E(n)}\\[0.3cm]
+     = &\frac{E(U_1)+E(U_2)+\dots+E(U_n)}{n}\\
+     = &\frac{n\times\mu}{n}\\
+     = & \mu
+\end{align}
+Variance of M
+\begin{align}
+    Var(M_n) =& \frac{Var(U_1+U_2+U_3\dots+U_n)}{n^2}\\[0.3cm]
+    =& \frac{Var(U_1) + Var(U_2)\dots+Var(U_n)}{n^2}\\
+    =& \frac{n\times{\sigma^2}}{n^2}\\[0.3cm]
+    =& \frac{\sigma^2}{n} \label{0.0.10}
+\end{align}
+From Chebyshev inequality, for any $\epsilon > 0$
+\begin{align}
+    \pr{|M_n-\mu|\geq \epsilon} \hspace{0.2cm} \leq \hspace{0.2cm} \frac{Var(M_n)}{\epsilon^2}
+\end{align}
+From \eqref{0.0.1} and \eqref{0.0.10}
+\begin{align}
+    \pr{\big|\frac{U_1+U_2\dots+U_n}{n} - \mu\big| \geq \epsilon} \leq \frac{\sigma^2}{n\times\epsilon^2}\notag
+\end{align}
+\begin{align}
+    \begin{split}
+    \lim_{n \to \infty} \pr{\big|\frac{U_1+U_2\dots+U_n}{n} - \mu\big| \geq \epsilon}\\
+    \leq \lim_{n \to \infty} \frac{\sigma^2}{n\times\epsilon^2} \leq 0 \hspace{0.2cm} \text{for fixed $\epsilon > 0$}
+    \end{split}
+\end{align}
+But since Probabilities are always non-negative,
+\begin{align}
+    \lim_{n \to \infty} \pr{\big|\frac{U_1+U_2\dots+U_n}{n} - \mu\big| \geq \epsilon} \to 0 \label{0.0.13}
+\end{align}
+This is known as the weak law of large numbers\\
+The inverse of \eqref{0.0.13} is also true
+\begin{align}
+    &\lim_{n \to \infty} \pr{\big|\frac{U_1+U_2\dots+U_n}{n} - \mu\big| \leq \epsilon} \to 1 \\[0.3cm]
+    &|\frac{U_1+U_2\dots+U_n}{n} - \mu\big| \leq \epsilon \hspace{0.2cm}\text{as  n $\to$ $\infty$} 
+\end{align}
+From $\epsilon$, n definition of limits, it is clear that 
+\begin{align}
+    &\frac{U_1+U_2\dots+U_n}{n} \to \mu\\
+    &U_1+U_2\dots U_n \to n\times\mu \hspace{0.2cm}\text{as  n $\to$ $\infty$}
+\end{align}
+Since $\mu = \frac{1}{2}$,
+\begin{align}
+    \lim_{n \to \infty} U_1+U_2\dots U_n = \frac{1}{2}n < \frac{3}{4}n
+\end{align}
+So 
+\begin{align}
+    \lim_{n \to +\infty} \pr{U_1+U_2\dots,U_n\leq \frac{3}{4}n} = 1
+\end{align}
+\begin{center}
+    Correct Option : C
+\end{center}
+\end{document}
