@@ -134,78 +134,18 @@ and latex-tikz codes from
 \begin{lstlisting}
 https://github.com/CS20BTECH11062/AI1103/tree/main/Assignment-8/Assignment-8.tex
 \end{lstlisting}
-\section*{QUESTION (UGC MATH (mathA) June 2017 Q.52)}
-Let $U_1,U_2\dots,U_n$ be independent and identically distributed random variables each
-having a uniform distribution on (0,1). Then,$$\lim_{n \to +\infty} \pr{U_1+U_2\dots,U_n\leq \frac{3}{4}n}$$
-\begin{enumerate}
-    \item does not exist
-    \item exists and equals 0
-    \item exists and equals 1
-    \item exists and equals $\frac{3}{4}$
+\section*{QUESTION\\(UGC MATH (mathA) June 2017 Q.52)}
+X and Y are independent random variables each having the density
+\begin{align}
+    f(t) = \displaystyle\frac{1}{\pi} \frac{1}{1+{t}^2} -\infty < t < +\infty
+\end{align}
+Then the density function of $\displaystyle\frac{X+Y}{3}$ for \\$-\infty <$ t $< +\infty$ is\bigskip
+\begin{enumerate}\itemsep0.5cm
+    \item $\displaystyle\frac{6}{\pi} \frac{1}{4+9{t}^2}$
+    \item $\displaystyle\frac{6}{\pi} \frac{1}{9+4{t}^2}$
+    \item $\displaystyle\frac{3}{\pi} \frac{1}{1+9{t}^2}$
+    \item $\displaystyle\frac{3}{\pi} \frac{1}{9+{t}^2}$
 \end{enumerate}
 \section*{SOLUTION}
-We use Weak law for large numbers to solve this problem. 
-Let the collection of identically distributed random variables $U_1,U_2\dots,U_n$
-have a finite mean $\mu$ and finite variance $\sigma^2$.
-\begin{align}
-    \mu = E(U_i) \hspace{0.3cm}\text{for i $\in$ (1,2,3\dots,n)}\label{0.0.1}
-\end{align}
-Since the distribution is uniform on (0,1), $\mu$ = 0.5. Let $M_n$ be the sample mean
-\begin{align}
-     M_n = \frac{U_1+U_2+U_3\dots+U_n}{n}\label{0.0.2}
-\end{align}
-Expected value of $M_n$ (using \eqref{0.0.2} and \eqref{0.0.1})is
-\begin{align}
-    E(M_n) = &\frac{E(U_1+U_2+U_3+\dots+U_n)}{E(n)}\\[0.3cm]
-     = &\frac{E(U_1)+E(U_2)+\dots+E(U_n)}{n}\\
-     = &\frac{n\times\mu}{n}\\
-     = & \mu
-\end{align}
-Variance of M
-\begin{align}
-    Var(M_n) =& \frac{Var(U_1+U_2+U_3\dots+U_n)}{n^2}\\[0.3cm]
-    =& \frac{Var(U_1) + Var(U_2)\dots+Var(U_n)}{n^2}\\
-    =& \frac{n\times{\sigma^2}}{n^2}\\[0.3cm]
-    =& \frac{\sigma^2}{n} \label{0.0.10}
-\end{align}
-From Chebyshev inequality, for any $\epsilon > 0$
-\begin{align}
-    \pr{|M_n-\mu|\geq \epsilon} \hspace{0.2cm} \leq \hspace{0.2cm} \frac{Var(M_n)}{\epsilon^2}
-\end{align}
-From \eqref{0.0.1} and \eqref{0.0.10}
-\begin{align}
-    \pr{\big|\frac{U_1+U_2\dots+U_n}{n} - \mu\big| \geq \epsilon} \leq \frac{\sigma^2}{n\times\epsilon^2}\notag
-\end{align}
-\begin{align}
-    \begin{split}
-    \lim_{n \to \infty} \pr{\big|\frac{U_1+U_2\dots+U_n}{n} - \mu\big| \geq \epsilon}\\
-    \leq \lim_{n \to \infty} \frac{\sigma^2}{n\times\epsilon^2} \leq 0 \hspace{0.2cm} \text{for fixed $\epsilon > 0$}
-    \end{split}
-\end{align}
-But since Probabilities are always non-negative,
-\begin{align}
-    \lim_{n \to \infty} \pr{\big|\frac{U_1+U_2\dots+U_n}{n} - \mu\big| \geq \epsilon} \to 0 \label{0.0.13}
-\end{align}
-This is known as the weak law of large numbers\\
-The inverse of \eqref{0.0.13} is also true
-\begin{align}
-    &\lim_{n \to \infty} \pr{\big|\frac{U_1+U_2\dots+U_n}{n} - \mu\big| \leq \epsilon} \to 1 \\[0.3cm]
-    &|\frac{U_1+U_2\dots+U_n}{n} - \mu\big| \leq \epsilon \hspace{0.2cm}\text{as  n $\to$ $\infty$} 
-\end{align}
-From $\epsilon$, n definition of limits, it is clear that 
-\begin{align}
-    &\frac{U_1+U_2\dots+U_n}{n} \to \mu\\
-    &U_1+U_2\dots U_n \to n\times\mu \hspace{0.2cm}\text{as  n $\to$ $\infty$}
-\end{align}
-Since $\mu = \frac{1}{2}$,
-\begin{align}
-    \lim_{n \to \infty} U_1+U_2\dots U_n = \frac{1}{2}n < \frac{3}{4}n
-\end{align}
-So 
-\begin{align}
-    \lim_{n \to +\infty} \pr{U_1+U_2\dots,U_n\leq \frac{3}{4}n} = 1
-\end{align}
-\begin{center}
-    Correct Option : C
-\end{center}
+
 \end{document}
