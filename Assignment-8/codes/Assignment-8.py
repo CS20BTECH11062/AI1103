@@ -3,6 +3,7 @@ import numpy as np
 from scipy.integrate import quad
 import random
 import matplotlib.pyplot as plt
+import math
 
 #the following defines the given probability density
 def prob_density(t):
@@ -28,7 +29,6 @@ def ans(z):
     return 6/(np.pi * (4+9*(z**2)))
 
 #We now plot both convolution and ans functions to check it they're the same.
-
 x_axis = np.arange(-20,20)
 y_axis_conv = []
 y_axis_init = []
