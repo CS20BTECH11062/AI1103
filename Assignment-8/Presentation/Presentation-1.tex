@@ -1,0 +1,196 @@
+\documentclass{beamer}
+\usepackage{listings}
+\lstset{
+language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usetikzlibrary{calc,math}
+\usepackage{float}
+\usepackage{amsthm}
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\comb}[2]{{}^{#1}\mathrm{C}_{#2}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\abs}[1]{\vert#1\vert}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\usepackage[export]{adjustbox}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[version=4]{mhchem}
+\usetheme{Boadilla}
+\title{Characteristic Function}
+\author{Srivatsan T}
+\institute{IITH}
+\date{\today}
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+\begin{frame}{Question}
+  \begin{block}{UGC MATH (mathA) June 2017-Q.52}
+    X and Y are independent random variables each having the density
+    \begin{align}
+      f(t) = \displaystyle\frac{1}{\pi} \frac{1}{1+{t}^2} -\infty < t < +\infty\notag
+    \end{align}
+    Then the density function of $\displaystyle\frac{X+Y}{3}$ for $-\infty <$ t $< +\infty$ is\bigskip
+    \begin{multicols}{2}
+      \begin{enumerate}\itemsep0.5cm
+        \item $\displaystyle\frac{6}{\pi} \frac{1}{4+9{t}^2}$
+        \item $\displaystyle\frac{6}{\pi} \frac{1}{9+4{t}^2}$
+        \item $\displaystyle\frac{3}{\pi} \frac{1}{1+9{t}^2}$
+        \item $\displaystyle\frac{3}{\pi} \frac{1}{9+{t}^2}$\\
+      \end{enumerate}
+    \end{multicols}
+  \end{block}
+\end{frame}
+\begin{frame}{Characteristic Function}
+  \begin{enumerate}
+    \item If a random variable admits a probability density function, then the characteristic function
+          is the Fourier transform of the probability density function.
+    \item    It provides an alteranate way to deal with probabilities of random variables
+          other than PDF and CDF.
+    \item It has particularly simpler results in case of sum of independent random varaiables.
+  \end{enumerate}
+\end{frame}
+\begin{frame}{PDF of X+Y}
+  PDF of sum of random variables X and Y given their individual PDFs can be calculated using
+  \begin{enumerate}
+    \item Convolution
+    \item Characteristic Function
+  \end{enumerate}
+\end{frame}
+\begin{frame}{PDF of X+Y using characteristic function}
+  \begin{block}{Property}
+    Characteristic function of sum of independent random variables is the product of characteristic function of those random varaiables.
+  \end{block}
+  And we obtain the PDF of X+Y by calculating the inverse characteristic function of X+Y.
+\end{frame}
+\begin{frame}{CF of X and Y}
+  \begin{block}{Given PDF of X and Y}
+    \begin{align}
+      f(t) = \displaystyle\frac{1}{\pi} \frac{1}{1+{t}^2} \hspace{0.2cm},-\infty < t < +\infty\label{0.0.1}
+    \end{align}
+  \end{block}
+  We then calcultate the fourier transform of $f(t)$ to get the CF of X and Y.
+  \begin{block}{CF of X and Y}
+    \begin{align}
+      g(w) =\hspace{0.2cm} & \int_{-\infty}^{\infty}  f(t) {e}^{iwt} dt                                         \\[0.2cm]
+      =\hspace{0.2cm}      & \int_{-\infty}^{\infty}  \displaystyle\frac{1}{\pi} \frac{1}{1+{t}^2} {e}^{iwt} dt \\[0.2cm]
+      =\hspace{0.2cm}      & e^{-\abs{w}}\hspace{0.2cm}, -\infty<w<\infty
+    \end{align}
+  \end{block}
+\end{frame}
+\begin{frame}{CF-contd.}
+  Let CF of Z = X + Y be h(w)
+  \begin{block}{h(w)}
+    \begin{align}
+      h(w) = & \hspace{0.2cm} \text{CF of x $\times$ CF of Y}  \\
+      =      & \hspace{0.2cm} e^{-\abs{w}} \times e^{-\abs{w}} \\
+      =      & \hspace{0.2cm} {e}^{-2\abs{w}}
+    \end{align}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Inverse CF of Z}
+  Now to find the PDF of Z, we calcultate the inverse fourier transform of h(w).
+  \begin{block}{Finding $F_{X+Y}(t)$}
+    \begin{align}
+      F_{X+Y}(t) =\hspace{0.2cm} & \int_{-\infty}^{\infty} h(w) {e}^{-iwt} dw           \\[0.2cm]
+      =\hspace{0.2cm}            & \int_{-\infty}^{\infty} {e}^{-iwt-2\abs{w}} dw       \\[0.2cm]
+      =\hspace{0.2cm}            & \frac{4}{4 + {t}^2} \hspace{0.2cm}, -\infty<t<\infty
+    \end{align}
+  \end{block}
+\end{frame}
+\begin{frame}{Solution contd.}
+  \begin{block}{$F_{X+Y}(t)$}
+    \begin{align}
+      \text{But}\hspace{0.2cm} \int_{-\infty}^{\infty} F_{X+Y}(t) dt = \int_{-\infty}^{\infty} \frac{4}{4+{t^2}} dt= 2\pi
+    \end{align}
+    So we plug in the normalisation factor $\displaystyle\frac{1}{2\pi}$ and the new $F_{X+Y}$ becomes
+    \begin{align}
+      F_{X+Y}(t) = \frac{2}{\pi} \frac{1}{4+{t}^2}\hspace{0.2cm}, -\infty<t<\infty
+    \end{align}
+  \end{block}
+\end{frame}
+\begin{frame}{Fun Approach}
+  \begin{block}{Recap}
+    \begin{align}
+      g(w) = & \hspace{0.2cm}  \int_{-\infty}^{\infty}  f(t) {e}^{iwt} dt     \label{0.0.13} \\
+      =      & \hspace{0.2cm}  e^{-\abs{w}}\hspace{0.2cm}, -\infty<w<\infty                  \\
+      h(w) = & \hspace{0.2cm} {e}^{-2\abs{w}}\hspace{0.2cm}, -\infty<w<\infty
+    \end{align}
+  \end{block}
+  Notice that $g(2w) = h(w)$\\
+  Fourier transform obeys one to one correspondence
+\end{frame}
+\begin{frame}{Solution contd.}
+  Replacing $w$ with $2w$ in \eqref{0.0.13}
+  \begin{block}{$g(2w)$}
+    \begin{align}
+      g(2w) = & \hspace{0.2cm}  \int_{-\infty}^{\infty}  f(t) {e}^{i(2w)t} dt                                         \\
+      =       & \hspace{0.2cm}  \int_{-\infty}^{\infty}  f\brak{\frac{t}{2}} {e}^{i2w\frac{t}{2}} d\brak{\frac{t}{2}} \\
+      =       & \hspace{0.2cm}  \int_{-\infty}^{\infty}  \frac{1}{2} f\brak{\frac{t}{2}} {e}^{iwt} dt
+    \end{align}
+  \end{block}
+\end{frame}
+\begin{frame}{Solution contd.}
+  Since $g(2w) = h(w)$
+  \begin{block}{$h(w)$}
+    \begin{align}
+      h(w) = & \hspace{0.2cm}  \int_{-\infty}^{\infty}  \frac{1}{2} f\brak{\frac{t}{2}} {e}^{iwt} dt
+    \end{align}
+  \end{block}
+  Let $\frac{1}{2} f\brak{\frac{t}{2}}$ be any function of t whose Characteristic function is h(w).
+\end{frame}
+\begin{frame}{Solution contd.}
+  Recall from $\eqref{0.0.1}$ f(t) = $\displaystyle\frac{1}{\pi} \frac{1}{1+{t}^2} \hspace{0.2cm},-\infty < t < +\infty$
+  \begin{block}{}
+    \begin{align}
+      F_Z(t) = & \hspace{0.2cm} \frac{1}{2} f\brak{\frac{t}{2}}                                                 \\
+      =        & \hspace{0.2cm} \frac{1}{2} \displaystyle\frac{1}{\pi}  \frac{4}{4+{t}^2}                       \\
+      =        & \hspace{0.2cm} \displaystyle\frac{1}{\pi}  \frac{2}{4+{t}^2} \hspace{0.2cm}, -\infty<t<+\infty
+    \end{align}
+  \end{block}
+\end{frame}
+
+\begin{frame}{$\frac{Z}{3} = \frac{X+Y}{3}$}
+  We know that if a random variable M has a probability density $f_M(x)$, then the probability density of random variable kM is
+  \begin{block}{}
+    \begin{align}
+      f_{kM}\brak{x} = \frac{1}{\abs{k}} f_M\brak{\frac{x}{\abs{k}}}
+    \end{align}
+  \end{block}
+  Probability density of $\frac{Z}{3}$ given $F_Z(t)$ is
+  \begin{block}{}
+    \begin{align}
+      F_{\frac{Z}{3}}(t) = & 3\times \displaystyle f_{X+Y}(3t)                                 \\
+      =                    & \frac{6}{\pi} \frac{1}{4+9{t}^2}\hspace{0.2cm}, -\infty<t<+\infty
+    \end{align}
+    \begin{center}
+      Thus option 1 is correct
+    \end{center}
+  \end{block}
+\end{frame}
+\begin{frame}{Figures}
+  \begin{figure}[!ht]
+    \centering
+    %\includegraphics[width=0.8\columnwidth]{cdf.png}
+    \caption{The CDF distribution of $Y_n$ for n=10}
+    \label{rect}
+  \end{figure}
+\end{frame}
+
+\end{document}
