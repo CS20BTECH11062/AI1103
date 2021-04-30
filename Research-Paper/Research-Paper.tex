@@ -32,7 +32,8 @@ columns=fullflexible
 \usepackage[version=4]{mhchem}
 \usetheme{Boadilla}
 \title{Dynamic Bandwidth Allocation in GMPLS Optical Networks using Minimum Execution Time Technique}
-\author{Srivatsan T}
+\author{Srivatsan T\\Paper by Monika, Simranjit Singh and Amit Wason\\
+National Chung Cheng University, Taiwan (February 7-8, 2020) and Chitkara University, India (February 14-15, 2020)}
 \institute{IITH}
 \date{\today}
 \begin{document}
@@ -353,7 +354,7 @@ columns=fullflexible
 \begin{frame}
   \begin{block}{$P_B$ Contd.}
     \begin{align}
-      P_B = & P_0 \brak{\frac{A^N}{N!}} \brak{\frac{1-\brak{\frac{A}{N}}^{q+1}}{1-\brak{\frac{A}{N}}}}                                                                                                      \\[0.3cm]
+      P_B = & P_0 \brak{\frac{A^N}{N!}} \brak{\frac{1-\brak{\frac{A}{N}}^{q+1}}{1-\brak{\frac{A}{N}}}}                                                                                                                            \\[0.3cm]
       P_B = & \frac{\brak{\frac{A^N}{N!}} \brak{\frac{1-\brak{\frac{A}{N}}^{q+1}}{1-\brak{\frac{A}{N}}}}}{\sum_{i = 0}^{N} \frac{A^i}{i!} + \brak{\frac{A^N}{N!}} \brak{\frac{1-\brak{\frac{A}{N}}^{q+1}}{1-\brak{\frac{A}{N}}}}}
     \end{align}
   \end{block}
@@ -368,7 +369,7 @@ columns=fullflexible
   \begin{enumerate}
     \item Enter user,server positions, bandwidth and link rates
     \item Evaluate the coverage area and maintain routing table
-    \item Run the algorithm and find the server with least time 
+    \item Run the algorithm and find the server with least time
     \item Connect the server to the demanding user by providing wavelength and link rates
     \item Evaluate performance using Blocking Probability and latency
   \end{enumerate}
@@ -376,21 +377,21 @@ columns=fullflexible
 \begin{frame}{Results and Graphs}
   \begin{figure}[!]
     \centering
-     \includegraphics[height = 7cm,width = 0.7\columnwidth]{Networking-diagram.png}
+    \includegraphics[height = 7cm,width = 0.7\columnwidth]{Networking-diagram.png}
     \caption{Simulations using said model and algorithm}
-  \end{figure}  
+  \end{figure}
 \end{frame}
 \begin{frame}{Figures}
   \begin{figure}[!]
     \centering
-     \includegraphics[height = 7cm,width = 0.7\columnwidth]{BP with lambda.png}
+    \includegraphics[height = 7cm,width = 0.7\columnwidth]{BP with lambda.png}
     \caption{Variation of BP with number of wavelength}
   \end{figure}
 \end{frame}
 \begin{frame}{Figures}
   \begin{figure}[!]
     \centering
-     \includegraphics[height = 7cm,width = 0.7\columnwidth]{BP with load.png}
+    \includegraphics[height = 7cm,width = 0.7\columnwidth]{BP with load.png}
     \caption{Variation of BP with traffic}
   \end{figure}
 \end{frame}
