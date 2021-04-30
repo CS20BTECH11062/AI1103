@@ -94,6 +94,7 @@ columns=fullflexible
       \item $\lambda$ - mean call arraival rate
       \item Let the call timings be exponentially distributed with $\frac{1}{\mu}$ as its mean
       \item $\mu$ - mean calls completion rate
+      \item q - size of erlang queue
     \end{enumerate}
   \end{block}
 \end{frame}
@@ -299,13 +300,13 @@ columns=fullflexible
         draw=orange,
         fill=orange]
       (n) edge[bend right, auto=left]  node {$\lambda$} (s)
-      (s) edge[bend right, auto=right] node {$\mu$} (n)
+      (s) edge[bend right, auto=right] node {$N\mu$} (n)
       (s) edge[bend right, auto=left]  node {$\lambda$} (r)
-      (r) edge[bend right, auto=right] node {$\mu$} (s)
+      (r) edge[bend right, auto=right] node {$N\mu$} (s)
       (r) edge[bend right, auto=left]  node {$\lambda$} (t)
-      (t) edge[bend right, auto=right] node {$\mu$} (r)
+      (t) edge[bend right, auto=right] node {$N\mu$} (r)
       (k) edge[bend right, auto=left]  node {$\lambda$} (m)
-      (m) edge[bend right, auto=right] node {$\mu$} (k);
+      (m) edge[bend right, auto=right] node {$N\mu$} (k);
     \end{tikzpicture}
   \end{block}
   Let $P_k$ denote the probability that there are k callers in the system.
